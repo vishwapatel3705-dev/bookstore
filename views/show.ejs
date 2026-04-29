@@ -1,0 +1,14 @@
+<%- include("partials/header") %>
+
+<h1><%= book.title %></h1>
+<p><%= book.author %></p>
+
+<% if (book.coverImage) { %>
+  <img src="/uploads/<%= book.coverImage %>" width="200">
+<% } %>
+
+<p><%= book.description %></p>
+
+<a href="/">Back</a>
+
+<%- include("partials/footer") %>

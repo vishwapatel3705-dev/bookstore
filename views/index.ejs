@@ -1,0 +1,26 @@
+<%- include("partials/header") %>
+
+<h1>Books</h1>
+
+<% books.forEach(book => { %>
+  <div class="card">
+    <h3><%= book.title %></h3>
+    <p><%= book.author %></p>
+
+    <% if (book.coverImage) { %>
+      <a href="/uploads/<%= book.coverImage %>" target="_blank">
+        Open File
+      </a>
+    <% } %>
+
+    <br>
+    <a href="/books/<%= book._id %>">View</a>
+    <a href="/books/<%= book._id %>/edit">Edit</a>
+
+    <form action="/books/<%= book._id %>?_method=DELETE" method="POST">
+      <button>Delete</button>
+    </form>
+  </div>
+<% }) %>
+
+<%- include("partials/footer") %>

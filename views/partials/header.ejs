@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>BOOKSTORE</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    
+    <nav>
+        <% if (userId) { %>
+            <a href="/books">Home</a>
+            <a href="/new">Add Book</a>
+            <a href="/logout">Logout</a>
+            <% } else { %>
+                <span><h1><%= pageTitle %></h1></span>
+                <% } %>
+    </nav>
+        
+<div class="container">
